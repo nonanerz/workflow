@@ -1,0 +1,16 @@
+stages:
+  - review
+
+workflow:
+  rules:
+    - when: always
+
+review:
+  stage: review
+  image: nonanerz/ai-review:0.3
+  script:
+    - python /app/main.py
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - when: never
