@@ -7,7 +7,7 @@ workflow:
 
 review:
   stage: review
-  image: nonanerz/ai-review:gpt-3.5-turbo
+  image: nonanerz/ai-review:gpt-4o
   script:
     - python /app/main.py
   rules:
