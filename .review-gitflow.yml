@@ -6,6 +6,7 @@ workflow:
     - when: always
 
 review:
+  stage: review
   image: nonanerz/ai-review:gpt-3.5-turbo
   script:
     - python /app/main.py
